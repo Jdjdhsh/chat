@@ -5,7 +5,7 @@ import time
 async def send_request(session, url):
     try:
         async with session.get(url) as response:
-            return response.status, await response.text()[:1000]  # Trả về mã trạng thái và 100 ký tự đầu tiên
+            return response.status, await response.text()[:10]  # Trả về mã trạng thái và 100 ký tự đầu tiên
     except Exception as e:
         return None, f"Error: {e}"
 
